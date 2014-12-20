@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo Page</title>
+    <link rel="stylesheet" href="src/css/common.css">
+    <link rel="stylesheet" href="src/css/site.css">
+
+    <script type="text/javascript" src="src/packages/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="src/packages/angular/angular.js"></script>
+    <script type="text/javascript" src="src/js/svgDirective.js"></script>
+    <script type="text/javascript" src="src/js/siteCtrl.js"></script>
+    <script type="text/javascript" src="src/js/itemDirective.js"></script>
+</head>
+<body ng-app="SvgDemo">
+<p class="font-l text-center">
+    SVG binding with AngularJs Demo
+</p>
+<div class="font-m text-space l left">
+    Click on a rectangle to activate or deactivate it!
+</div>
+<div ng-controller="siteCtrl">
+    <svg width="1024px" height="400px" auto-size>
+        <rect-item ng-repeat="rect in rectangles" data="rect" loading="rect.loading">
+            <item-title>
+                {{rect.title}}
+            </item-title>
+        </rect-item>
+    </svg>
+</div>
+<div class="font-s text-space l left">
+    If you want to see a more complex project, please visit my <a href="https://github.com/Soulskater/FlowDesigner/" target="_blank">github repo</a>.<br/>
+    Also you can find my projects on my <a href="http://mgprog.net" target="_blank">official page</a>.
+</div>
+</body>
+</html>

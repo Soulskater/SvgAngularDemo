@@ -1,0 +1,30 @@
+@import "shared";
+
+@blue-color: #3088db;
+@dark-red: #DB4F00;
+@light-green: #00B821;
+
+/* region Item*/
+
+.rect-item {
+    stroke: @dark-grey;
+    fill: @box-color;
+    stroke-width: 2px;
+
+    &.selected{
+        stroke: @dark-blue;
+    }
+
+    &.loading {
+        stroke: @dark-blue !important;
+    }
+}
+
+.property-name {
+    max-width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: auto;
+}
+
+/* endregion Item*/

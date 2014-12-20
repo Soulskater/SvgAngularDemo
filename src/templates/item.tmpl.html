@@ -1,0 +1,33 @@
+<svg>
+    <linearGradient id="loading" fy="0">
+
+        <stop offset="0" stop-color="#007acb">
+        </stop>
+        <stop offset="1" stop-color="#dbdbdb">
+            <animate attributeName="offset" dur="1.5s" values="0;1;0"
+                     repeatCount="indefinite"/>
+        </stop>
+        <stop offset="1" stop-color="#007acb"/>
+    </linearGradient>
+    <g id="test">
+        <!--Style rect-->
+        <rect ng-width="width" ng-height="height"
+              ng-x="data.position.x"
+              ng-y="data.position.y"
+              class="rect-item"
+              ng-click="loading = !loading"
+              ng-class="{ loading: loading}">
+        </rect>
+
+        <!--Item text-->
+        <foreignObject ng-x="data.position.x" ng-y="data.position.y" ng-width="width" height="50">
+            <div class="text-space m left" style="padding-top: 5px;" ng-transclude>
+            </div>
+        </foreignObject>
+
+        <!--Progressbar-->
+        <rect ng-x="data.position.x"
+              ng-y="data.position.y-1" ng-width="width" height="2" ng-if="loading"
+              fill="url(#loading)"></rect>
+    </g>
+</svg>
